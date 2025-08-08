@@ -37,5 +37,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
+### 톰캣 관련 제거
 .smarttomcat
+
+### Dotenv
 .env
