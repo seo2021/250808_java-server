@@ -15,12 +15,26 @@
             font-style: normal;
         }
         /* body 안에 있는 폰트를 아래 지정한 폰트로 바꾸기 */
-        body, button {
+        body, button, input {
             font-family: 'PFStardustS';
+            font-size: large;
+        }
+        button {
+            background-color: #6bb4f3;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
         }
         input {
             background-color: #eee;
             border: none;
+            padding: 10px;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .placeholder {
+            color: #999;
+            font-style: italic;
         }
     </style>
 </head>
@@ -28,10 +42,10 @@
 <h2>AI 채팅을 합시다</h2>
 <h3></h3>
 <p>
-    질문: <%= request.getAttribute("question") %>
+    질문: <%= request.getAttribute("question") != null ? request.getAttribute("question") : "<span class='placeholder'>아직 질문이 없습니다.</span>" %>
 </p>
 <p>
-    답변: <%= request.getAttribute("answer") %>
+    답변: <%= request.getAttribute("answer") != null ? request.getAttribute("answer") : "<span class='placeholder'></span>" %>
 </p>
 <form method="POST" action="">
     <input name="question">
