@@ -45,10 +45,10 @@
     질문: <%= request.getAttribute("question") != null ? request.getAttribute("question") : "<span class='placeholder'>아직 질문이 없습니다.</span>" %>
 </p>
 <p>
-    답변: <%= request.getAttribute("answer") != null ? request.getAttribute("answer") : "<span class='placeholder'></span>" %>
+    답변: <%= request.getAttribute("answer") != null ? request.getAttribute("answer") : "<span class='placeholder'>아직 답변이 없습니다.</span>" %>
 </p>
 <form method="POST" action="">
-    <input name="question">
+    <input name="question" placeholder="질문을 입력하세요.">
     <button>질문하기</button>
 </form>
 </body>
