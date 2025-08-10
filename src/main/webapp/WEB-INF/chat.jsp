@@ -19,6 +19,14 @@
             font-family: 'PFStardustS';
             font-size: large;
         }
+        body {
+            text-align: center;
+            margin: auto;
+            padding: 80px 20px;
+        }
+        form {
+            margin: auto;
+        }
         button {
             background-color: #6bb4f3;
             border: none;
@@ -32,21 +40,25 @@
             border-radius: 4px;
             width: 300px;
         }
-        .placeholder {
-            color: #999;
-            font-style: italic;
+        img {
+            width: 15%;
+            height: auto;
+            margin: 0px 0px 30px;
         }
     </style>
 </head>
 <body>
 <h2>AI 채팅을 합시다</h2>
-<h3></h3>
-<p>
-    질문: <%= request.getAttribute("question") != null ? request.getAttribute("question") : "<span class='placeholder'>아직 질문이 없습니다.</span>" %>
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGU0bzU4aXZzdGdsbDhuZDg5dDdyN2xpdXg1bzJ6amQyOXdzajJmbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Tz30dcgKE3GCTYpxol/giphy.gif" alt="robot" />
+<% if(request.getAttribute("question") != null) { %>
+<p class='lists'>
+    질문: <%= request.getAttribute("question")  %>
 </p>
-<p>
-    답변: <%= request.getAttribute("answer") != null ? request.getAttribute("answer") : "<span class='placeholder'>아직 답변이 없습니다.</span>" %>
+<p class='lists'>
+    답변: <%= request.getAttribute("answer") %>
 </p>
+<% } %>
+
 <form method="POST" action="">
     <input name="question" placeholder="질문을 입력하세요.">
     <button>질문하기</button>
